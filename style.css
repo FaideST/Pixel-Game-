@@ -1,0 +1,67 @@
+body {
+  font-family: sans-serif;
+  background: #111;
+  color: #eee;
+  margin: 0;
+  padding: 10px;
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Spielfeld */
+.game canvas {
+  border: 2px solid #555;
+  image-rendering: pixelated;
+}
+
+/* Rechte Seite */
+.ui {
+  width: 220px;
+  max-height: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Timer */
+#timer {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Tabelle scrollt, Seite nicht */
+#timeTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #222;
+}
+
+#timeTable th,
+#timeTable td {
+  border: 1px solid #444;
+  padding: 4px;
+  text-align: center;
+}
+
+#timeTable thead {
+  background: #333;
+  position: sticky;
+  top: 0;
+}
+
+/* 👇 wichtig */
+#timeTable tbody {
+  display: block;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+#timeTable thead,
+#timeTable tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}

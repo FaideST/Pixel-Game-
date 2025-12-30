@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixelart Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>WICHTIG: Das Spiel dient der Messung von Übunseffekten beim Gaming, das heißt JEDE Messung ist wichtig!
+        Kommt gut nach oben, viel Spaß!
+    </p>
+
+    <p>links: "a" rechts: "d" springen: "space"</p>
+    <p> Character wechseln: Arrowkeys "<- ->"</p>
+
+    
+    <button id="startBtn">Spiel starten (Enter)</button>
+
+    
+
+    <div class="layout">
+
+<div class="game">
+
+    <canvas id="gameCanvas"></canvas>
+    <script src="dist/main.js" type="module"></script>
+
+</div>
+
+<div class="ui">
+
+<div id="timer">Zeit: 0.00 s</div>
+
+</div>
+
+
+    
+    <table id="timeTable">
+        <thead>
+            <tr>
+                <th>Versuch</th>
+                <th>Zeit (s)</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+</div>
+
+
+
+</body>
+</html>
