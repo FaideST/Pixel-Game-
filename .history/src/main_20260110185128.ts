@@ -87,9 +87,9 @@ const playerHeight = 32;
 const heroes = ["Magi.png","Assasine.png","bard.png","elf.png", "wizardcharacteror1.png" ];
 let selectedHero = 0;
 
-window.addEventListener("keydown", e => {
+player.src = `assets/sprites/heroes/${heroes[selectedHero]}`;
 
-  if (e.key === "ArrowLeft") {
+ if (e.key === "ArrowLeft") {
     e.preventDefault();
 
     selectedHero =
@@ -107,6 +107,7 @@ window.addEventListener("keydown", e => {
     changeHero();
   }
 });
+
 
 
 const sky = new Image();
@@ -321,18 +322,6 @@ const allPlatforms = [...platforms, goal];
   startTime = performance.now();
   elapsedTime = 0;
 });
-
-
-function changeHero() {
-  playerLoaded = false;
-
-  player.src = `assets/sprites/heroes/${heroes[selectedHero]}`;
-
-  player.onload = () => {
-    playerLoaded = true;
-    console.log("Hero geladen:", player.src);
-  };
-}
 
   function stopTimer() {
     gameStarted = false;

@@ -87,26 +87,17 @@ const playerHeight = 32;
 const heroes = ["Magi.png","Assasine.png","bard.png","elf.png", "wizardcharacteror1.png" ];
 let selectedHero = 0;
 
+player.src = `assets/sprites/heroes/${heroes[selectedHero]}`;
+
 window.addEventListener("keydown", e => {
-
-  if (e.key === "ArrowLeft") {
-    e.preventDefault();
-
-    selectedHero =
-      (selectedHero + heroes.length - 1) % heroes.length;
-
-    changeHero();
+  if(e.key === "ArrowLeft"){ selectedHero = (selectedHero + heroes.length - 1)% heroes.length;
+    player.src = `assets/sprites/heroes/${heroes[selectedHero]}`;
   }
-
-  if (e.key === "ArrowRight") {
-    e.preventDefault();
-
-    selectedHero =
-      (selectedHero + 1) % heroes.length;
-
-    changeHero();
+  if(e.key === "ArrowRight"){ selectedHero = (selectedHero + 1) % heroes.length;
+  player.src = `assets/sprites/heroes/${heroes[selectedHero]}`;
   }
 });
+
 
 
 const sky = new Image();
@@ -321,18 +312,6 @@ const allPlatforms = [...platforms, goal];
   startTime = performance.now();
   elapsedTime = 0;
 });
-
-
-function changeHero() {
-  playerLoaded = false;
-
-  player.src = `assets/sprites/heroes/${heroes[selectedHero]}`;
-
-  player.onload = () => {
-    playerLoaded = true;
-    console.log("Hero geladen:", player.src);
-  };
-}
 
   function stopTimer() {
     gameStarted = false;

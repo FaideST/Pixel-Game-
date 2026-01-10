@@ -333,7 +333,6 @@ function changeHero() {
     console.log("Hero geladen:", player.src);
   };
 }
-
   function stopTimer() {
     gameStarted = false;
     times.push(elapsedTime);
