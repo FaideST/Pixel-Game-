@@ -331,8 +331,8 @@ const allPlatforms = [...platforms, goal];
 
 function changeHero() {
   playerLoaded = false;
-  player.src = `assets/sprites/heroes/${heroes[selectedHero]}`;
 
+  player.src = `src/assets/sprites/heroes/${heroes[selectedHero]}`;
 
   player.onload = () => {
     playerLoaded = true;

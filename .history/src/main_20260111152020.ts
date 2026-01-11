@@ -328,11 +328,10 @@ const allPlatforms = [...platforms, goal];
   elapsedTime = 0;
 });
 
-
 function changeHero() {
   playerLoaded = false;
   player.src = `assets/sprites/heroes/${heroes[selectedHero]}`;
-
+}
 
   player.onload = () => {
     playerLoaded = true;

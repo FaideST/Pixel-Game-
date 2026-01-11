@@ -213,7 +213,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     function changeHero() {
         playerLoaded = false;
-        player.src = `src/assets/sprites/heroes/${heroes[selectedHero]}`;
+        player.src = `assets/sprites/heroes/${heroes[selectedHero]}`;
         player.onload = () => {
             playerLoaded = true;
             console.log("Hero geladen:", player.src);
