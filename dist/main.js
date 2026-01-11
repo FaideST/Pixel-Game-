@@ -61,17 +61,26 @@ window.addEventListener("DOMContentLoaded", () => {
     const playerWidth = 32;
     const playerHeight = 32;
     //Char Auswahl
-    const heroes = ["Magi.png", "Assasine.png", "bard.png", "elf.png", "wizardcharacteror1.png"];
+    const heroes = [
+        "magif.png",
+        "assasinef.png",
+        "bard.png",
+        "elf.png",
+        "wiz.png"
+    ];
     let selectedHero = 0;
-    player.src = `assets/sprites/heroes/${heroes[selectedHero]}`;
     window.addEventListener("keydown", e => {
         if (e.key === "ArrowLeft") {
-            selectedHero = (selectedHero + heroes.length - 1) % heroes.length;
-            player.src = `assets/sprites/heroes/${heroes[selectedHero]}`;
+            e.preventDefault();
+            selectedHero =
+                (selectedHero + heroes.length - 1) % heroes.length;
+            changeHero();
         }
         if (e.key === "ArrowRight") {
-            selectedHero = (selectedHero + 1) % heroes.length;
-            player.src = `assets/sprites/heroes/${heroes[selectedHero]}`;
+            e.preventDefault();
+            selectedHero =
+                (selectedHero + 1) % heroes.length;
+            changeHero();
         }
     });
     const sky = new Image();
@@ -202,6 +211,14 @@ window.addEventListener("DOMContentLoaded", () => {
         startTime = performance.now();
         elapsedTime = 0;
     });
+    function changeHero() {
+        playerLoaded = false;
+        player.src = `src/assets/sprites/heroes/${heroes[selectedHero]}`;
+        player.onload = () => {
+            playerLoaded = true;
+            console.log("Hero geladen:", player.src);
+        };
+    }
     function stopTimer() {
         gameStarted = false;
         times.push(elapsedTime);

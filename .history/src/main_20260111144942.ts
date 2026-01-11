@@ -84,13 +84,7 @@ const playerWidth = 32;
 const playerHeight = 32;
 
 //Char Auswahl
-const heroes = [
-  "magif.png",
-  "assasinef.png",
-  "bard.png",
-  "elf.png",
-  "wiz.png"
-];
+const heroes = ["magi.png","Assasine.png","bard.png","elf.png", "wizardcharacteror1.png" ];
 let selectedHero = 0;
 
 window.addEventListener("keydown", e => {
@@ -332,7 +326,7 @@ const allPlatforms = [...platforms, goal];
 function changeHero() {
   playerLoaded = false;
 
-  player.src = `src/assets/sprites/heroes/${heroes[selectedHero]}`;
+  player.src = `assets/sprites/heroes/${heroes[selectedHero]}`;
 
   player.onload = () => {
     playerLoaded = true;

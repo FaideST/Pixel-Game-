@@ -89,7 +89,7 @@ const heroes = [
   "assasinef.png",
   "bard.png",
   "elf.png",
-  "wiz.png"
+  "wizardcharacterorf1.png"
 ];
 let selectedHero = 0;
 
@@ -332,7 +332,7 @@ const allPlatforms = [...platforms, goal];
 function changeHero() {
   playerLoaded = false;
 
-  player.src = `src/assets/sprites/heroes/${heroes[selectedHero]}`;
+  player.src = `assets/sprites/heroes/${heroes[selectedHero]}`;
 
   player.onload = () => {
     playerLoaded = true;
